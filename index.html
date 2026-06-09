@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viksit Bharat 2047 Research Program</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --saffron:   #E07B39;
+      --white:     #FAF8F4;
+      --ink:       #1A1410;
+      --stone:     #7A6F65;
+      --green:     #1A6B3C;
+      --ashoka:    #D4691E;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+    }
+
+    /* Tricolor bar at top */
+    .tricolor {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right,
+        var(--saffron) 0% 33.3%,
+        #FAF8F4     33.3% 66.6%,
+        var(--green)   66.6% 100%
+      );
+    }
+
+    /* Ashoka Chakra watermark */
+    .chakra-wrap {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(520px, 90vw);
+      height: min(520px, 90vw);
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .chakra-wrap svg { width: 100%; height: 100%; }
+
+    main {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100vh - 4px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 1.6rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 600;
+      line-height: 1.12;
+      color: var(--ink);
+      max-width: 18ch;
+      margin-bottom: 1.6rem;
+    }
+
+    h1 span {
+      color: var(--saffron);
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--green);
+      margin: 0 auto 1.6rem;
+    }
+
+    .tagline {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-weight: 300;
+      color: var(--stone);
+      max-width: 42ch;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 0.5rem 1.2rem;
+      border-radius: 2px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1.6rem;
+      width: 100%;
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--stone);
+      letter-spacing: 0.04em;
+      opacity: 0.7;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      main > * {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: fadeUp 0.7s ease forwards;
+      }
+      .eyebrow  { animation-delay: 0.1s; }
+      h1        { animation-delay: 0.25s; }
+      .divider  { animation-delay: 0.4s; }
+      .tagline  { animation-delay: 0.5s; }
+      .coming-soon { animation-delay: 0.62s; }
+
+      @keyframes fadeUp {
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="tricolor"></div>
+
+  <!-- Ashoka Chakra watermark -->
+  <div class="chakra-wrap" aria-hidden="true">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#1A3A6B" stroke-width="4"/>
+      <circle cx="100" cy="100" r="10" fill="#1A3A6B"/>
+      <circle cx="100" cy="100" r="78" fill="none" stroke="#1A3A6B" stroke-width="1.5"/>
+      <!-- 24 spokes -->
+      <g stroke="#1A3A6B" stroke-width="2">
+        <line x1="100" y1="22" x2="100" y2="178"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(15 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(30 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(45 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(60 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(75 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(90 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(105 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(120 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(135 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(150 100 100)"/>
+        <line x1="100" y1="22" x2="100" y2="178" transform="rotate(165 100 100)"/>
+      </g>
+    </svg>
+  </div>
+
+  <main>
+    <p class="eyebrow">August 15, 2047</p>
+    <h1>Viksit Bharat 2047<br><span>Research Program</span></h1>
+    <div class="divider"></div>
+    <p class="tagline">The evidence base Viksit Bharat demands.</p>
+    <span class="coming-soon">Coming Soon</span>
+  </main>
+
+  <footer>august152047.in</footer>
+</body>
+</html>
