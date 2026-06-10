@@ -16,7 +16,6 @@
       --ink:       #1A1410;
       --stone:     #7A6F65;
       --green:     #1A6B3C;
-      --ashoka:    #D4691E;
     }
 
     html, body {
@@ -27,7 +26,6 @@
       font-weight: 300;
     }
 
-    /* Tricolor bar at top */
     .tricolor {
       width: 100%;
       height: 4px;
@@ -38,18 +36,30 @@
       );
     }
 
-    /* Ashoka Chakra watermark */
+    /* Slowly rotating Chakra */
     .chakra-wrap {
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
       width: min(520px, 90vw);
       height: min(520px, 90vw);
-      opacity: 0.04;
+      margin-left: calc(min(520px, 90vw) / -2);
+      margin-top: calc(min(520px, 90vw) / -2);
+      opacity: 0.045;
       pointer-events: none;
       z-index: 0;
+      animation: spinChakra 60s linear infinite;
     }
+
+    @keyframes spinChakra {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .chakra-wrap { animation: none; }
+    }
+
     .chakra-wrap svg { width: 100%; height: 100%; }
 
     main {
@@ -64,8 +74,28 @@
       padding: 4rem 2rem;
     }
 
+    /* Chalo rotating block */
+    .chalo-wrap {
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3.8rem;
+      position: relative;
+    }
+
+    .chalo-word {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 400;
+      color: var(--ink);
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      line-height: 1.2;
+    }
+    .chalo-word.active { opacity: 1; }
+
     .eyebrow {
-      font-family: 'Inter', sans-serif;
       font-size: 0.68rem;
       font-weight: 500;
       letter-spacing: 0.2em;
@@ -84,9 +114,7 @@
       margin-bottom: 1.6rem;
     }
 
-    h1 span {
-      color: var(--saffron);
-    }
+    h1 span { color: var(--saffron); }
 
     .divider {
       width: 48px;
@@ -133,11 +161,12 @@
         transform: translateY(12px);
         animation: fadeUp 0.7s ease forwards;
       }
-      .eyebrow  { animation-delay: 0.1s; }
-      h1        { animation-delay: 0.25s; }
-      .divider  { animation-delay: 0.4s; }
-      .tagline  { animation-delay: 0.5s; }
-      .coming-soon { animation-delay: 0.62s; }
+      .chalo-wrap  { animation-delay: 0.05s; }
+      .eyebrow     { animation-delay: 0.2s; }
+      h1           { animation-delay: 0.35s; }
+      .divider     { animation-delay: 0.5s; }
+      .tagline     { animation-delay: 0.6s; }
+      .coming-soon { animation-delay: 0.72s; }
 
       @keyframes fadeUp {
         to { opacity: 1; transform: translateY(0); }
@@ -148,13 +177,11 @@
 <body>
   <div class="tricolor"></div>
 
-  <!-- Ashoka Chakra watermark -->
   <div class="chakra-wrap" aria-hidden="true">
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <circle cx="100" cy="100" r="90" fill="none" stroke="#1A3A6B" stroke-width="4"/>
       <circle cx="100" cy="100" r="10" fill="#1A3A6B"/>
       <circle cx="100" cy="100" r="78" fill="none" stroke="#1A3A6B" stroke-width="1.5"/>
-      <!-- 24 spokes -->
       <g stroke="#1A3A6B" stroke-width="2">
         <line x1="100" y1="22" x2="100" y2="178"/>
         <line x1="100" y1="22" x2="100" y2="178" transform="rotate(15 100 100)"/>
@@ -173,13 +200,36 @@
   </div>
 
   <main>
+    <div class="chalo-wrap" aria-label="Chalo — Let's go">
+      <span class="chalo-word active">चलो</span>
+      <span class="chalo-word">పోదాం</span>
+      <span class="chalo-word">வாருங்கள்</span>
+      <span class="chalo-word">চলো</span>
+      <span class="chalo-word">चला</span>
+      <span class="chalo-word">ચાલો</span>
+      <span class="chalo-word">ਚਲੋ</span>
+      <span class="chalo-word">ಹೋಗೋಣ</span>
+      <span class="chalo-word">പോകാം</span>
+      <span class="chalo-word">چلو</span>
+    </div>
+
     <p class="eyebrow">August 15, 2047</p>
     <h1>Viksit Bharat 2047<br><span>Research Program</span></h1>
     <div class="divider"></div>
-    <p class="tagline">The evidence base Viksit Bharat demands.</p>
+    <p class="tagline">Because 2047 won't build itself. This is India's moment.</p>
     <span class="coming-soon">Coming Soon</span>
   </main>
 
   <footer>august152047.in</footer>
+
+  <script>
+    const words = document.querySelectorAll('.chalo-word');
+    let current = 0;
+    setInterval(() => {
+      words[current].classList.remove('active');
+      current = (current + 1) % words.length;
+      words[current].classList.add('active');
+    }, 2200);
+  </script>
 </body>
 </html>
