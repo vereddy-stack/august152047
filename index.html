@@ -36,7 +36,6 @@
       );
     }
 
-    /* Slowly rotating Chakra */
     .chakra-wrap {
       position: fixed;
       top: 50%;
@@ -74,7 +73,6 @@
       padding: 4rem 2rem;
     }
 
-    /* Chalo rotating block */
     .chalo-wrap {
       margin-bottom: 1.4rem;
       display: flex;
@@ -142,6 +140,74 @@
       border: 1px solid var(--green);
       padding: 0.5rem 1.2rem;
       border-radius: 2px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Signup form — hidden until SHOW_SIGNUP = true */
+    .signup-wrap {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      width: 100%;
+      max-width: 380px;
+      margin-top: 0.5rem;
+    }
+
+    .signup-wrap.visible { display: flex; }
+
+    .signup-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    .signup-row {
+      display: flex;
+      width: 100%;
+      gap: 0;
+      border: 1px solid var(--saffron);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .signup-row input[type="email"] {
+      flex: 1;
+      padding: 0.65rem 1rem;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--white);
+      border: none;
+      outline: none;
+    }
+
+    .signup-row input[type="email"]::placeholder { color: var(--stone); opacity: 0.6; }
+
+    .signup-row button {
+      padding: 0.65rem 1.2rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--saffron);
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s ease;
+    }
+
+    .signup-row button:hover { background: var(--ashoka, #C96A28); }
+
+    .signup-thanks {
+      display: none;
+      font-size: 0.85rem;
+      color: var(--green);
+      font-weight: 400;
     }
 
     footer {
@@ -167,6 +233,7 @@
       .divider     { animation-delay: 0.5s; }
       .tagline     { animation-delay: 0.6s; }
       .coming-soon { animation-delay: 0.72s; }
+      .signup-wrap { animation-delay: 0.82s; }
 
       @keyframes fadeUp {
         to { opacity: 1; transform: translateY(0); }
@@ -218,11 +285,29 @@
     <div class="divider"></div>
     <p class="tagline">Because 2047 won't build itself. This is India's moment.</p>
     <span class="coming-soon">Coming Soon</span>
+
+    <!-- SIGNUP FORM — to show, change SHOW_SIGNUP to true below -->
+    <div class="signup-wrap" id="signupWrap">
+      <p class="signup-label">Be part of India's 2047 moment</p>
+      <div class="signup-row">
+        <input type="email" id="emailInput" placeholder="Your email address" />
+        <button onclick="submitSignup()">चलो →</button>
+      </div>
+      <p class="signup-thanks" id="signupThanks">🙏 You're in. See you on August 15, 2047.</p>
+    </div>
   </main>
 
   <footer>august152047.in · चलो August 15, 2047 ™ · august152047 ™</footer>
 
   <script>
+    // ── TOGGLE: change to true to show the signup form ──
+    const SHOW_SIGNUP = false;
+
+    if (SHOW_SIGNUP) {
+      document.getElementById('signupWrap').classList.add('visible');
+    }
+
+    // Chalo rotation
     const words = document.querySelectorAll('.chalo-word');
     let current = 0;
     setInterval(() => {
@@ -230,6 +315,23 @@
       current = (current + 1) % words.length;
       words[current].classList.add('active');
     }, 2200);
+
+    // Signup submission — posts to Google Form
+    function submitSignup() {
+      const email = document.getElementById('emailInput').value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('emailInput').focus();
+        return;
+      }
+      const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe8jY5MF-R0AcEcvS3cwKMIineNGP0Tz7CKXK0GXPv3gThpLA/formResponse';
+      const entryId = 'entry.1745562312'; // email field entry ID
+      fetch(`${formUrl}?${entryId}=${encodeURIComponent(email)}`, {
+        method: 'POST', mode: 'no-cors'
+      });
+      document.querySelector('.signup-row').style.display = 'none';
+      document.querySelector('.signup-label').style.display = 'none';
+      document.getElementById('signupThanks').style.display = 'block';
+    }
   </script>
 </body>
 </html>
