@@ -317,7 +317,11 @@
     <!-- SIGNUP FORM — to show, change SHOW_SIGNUP to true below -->
     <div class="signup-wrap" id="signupWrap">
       <p class="signup-label">Be part of India's 2047 moment</p>
-      <a class="whatsapp-join" style="background: var(--saffron);" href="https://docs.google.com/forms/d/e/1FAIpQLSe8jY5MF-R0AcEcvS3cwKMIineNGP0Tz7CKXK0GXPv3gThpLA/viewform" target="_blank" rel="noopener">चलो → Join by email</a>
+      <div class="signup-row">
+        <input type="email" id="emailInput" placeholder="Your email address" />
+        <button onclick="submitSignup()">चलो →</button>
+      </div>
+      <p class="signup-thanks" id="signupThanks">🙏 You're in. See you on August 15, 2047.</p>
       <p class="or-divider">or</p>
       <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
     </div>
@@ -341,6 +345,29 @@
       current = (current + 1) % words.length;
       words[current].classList.add('active');
     }, 2200);
+
+    // Signup submission — posts directly to Google Form's response endpoint
+    function submitSignup() {
+      const email = document.getElementById('emailInput').value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('emailInput').focus();
+        return;
+      }
+      const formActionUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSe8jY5MF-R0AcEcvS3cwKMIineNGP0Tz7CKXK0GXPv3gThpLA/formResponse';
+      const params = new URLSearchParams();
+      params.append('entry.594929088', email);
+
+      fetch(formActionUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString()
+      });
+
+      document.querySelector('.signup-row').style.display = 'none';
+      document.querySelector('.signup-label').style.display = 'none';
+      document.getElementById('signupThanks').style.display = 'block';
+    }
   </script>
 </body>
 </html>
