@@ -317,11 +317,7 @@
     <!-- SIGNUP FORM — to show, change SHOW_SIGNUP to true below -->
     <div class="signup-wrap" id="signupWrap">
       <p class="signup-label">Be part of India's 2047 moment</p>
-      <div class="signup-row">
-        <input type="email" id="emailInput" placeholder="Your email address" />
-        <button onclick="submitSignup()">चलो →</button>
-      </div>
-      <p class="signup-thanks" id="signupThanks">🙏 You're in. See you on August 15, 2047.</p>
+      <a class="whatsapp-join" style="background: var(--saffron);" href="https://docs.google.com/forms/d/e/1FAIpQLSe8jY5MF-R0AcEcvS3cwKMIineNGP0Tz7CKXK0GXPv3gThpLA/viewform" target="_blank" rel="noopener">चलो → Join by email</a>
       <p class="or-divider">or</p>
       <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
     </div>
@@ -331,7 +327,7 @@
 
   <script>
     // ── TOGGLE: change to true to show the signup form ──
-    const SHOW_SIGNUP = false;
+    const SHOW_SIGNUP = true;
 
     if (SHOW_SIGNUP) {
       document.getElementById('signupWrap').classList.add('visible');
@@ -345,23 +341,6 @@
       current = (current + 1) % words.length;
       words[current].classList.add('active');
     }, 2200);
-
-    // Signup submission — posts to Google Form
-    function submitSignup() {
-      const email = document.getElementById('emailInput').value.trim();
-      if (!email || !email.includes('@')) {
-        document.getElementById('emailInput').focus();
-        return;
-      }
-      const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe8jY5MF-R0AcEcvS3cwKMIineNGP0Tz7CKXK0GXPv3gThpLA/formResponse';
-      const entryId = 'entry.1745562312'; // email field entry ID
-      fetch(`${formUrl}?${entryId}=${encodeURIComponent(email)}`, {
-        method: 'POST', mode: 'no-cors'
-      });
-      document.querySelector('.signup-row').style.display = 'none';
-      document.querySelector('.signup-label').style.display = 'none';
-      document.getElementById('signupThanks').style.display = 'block';
-    }
   </script>
 </body>
 </html>
