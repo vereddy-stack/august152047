@@ -325,6 +325,18 @@
       <p class="or-divider">or</p>
       <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
     </div>
+
+    <!-- Hidden iframe target so the form post doesn't navigate the page -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <!-- Real HTML form, submitted invisibly to the hidden iframe -->
+    <form id="googleForm"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSe8jY5MF-R0AcEcvS3cwKMIineNGP0Tz7CKXK0GXPv3gThpLA/formResponse"
+          method="POST"
+          target="hidden_iframe"
+          style="display:none;">
+      <input type="text" name="entry.594929088" id="hiddenEmailField" />
+    </form>
   </main>
 
   <footer>august152047.in · चलो August 15, 2047 ™ · august152047 ™</footer>
@@ -346,23 +358,15 @@
       words[current].classList.add('active');
     }, 2200);
 
-    // Signup submission — posts directly to Google Form's response endpoint
+    // Signup submission — real form POST to hidden iframe (most reliable cross-origin method)
     function submitSignup() {
       const email = document.getElementById('emailInput').value.trim();
       if (!email || !email.includes('@')) {
         document.getElementById('emailInput').focus();
         return;
       }
-      const formActionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe8jY5MF-R0AcEcvS3cwKMIineNGP0Tz7CKXK0GXPv3gThpLA/formResponse';
-      const params = new URLSearchParams();
-      params.append('entry.594929088', email);
-
-      fetch(formActionUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString()
-      });
+      document.getElementById('hiddenEmailField').value = email;
+      document.getElementById('googleForm').submit();
 
       document.querySelector('.signup-row').style.display = 'none';
       document.querySelector('.signup-label').style.display = 'none';
