@@ -210,6 +210,34 @@
       font-weight: 400;
     }
 
+    .whatsapp-join {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 0.6rem 1.3rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--green);
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .whatsapp-join:hover { background: #145530; }
+
+    .or-divider {
+      font-size: 0.7rem;
+      color: var(--stone);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0.8rem 0 0.2rem;
+      opacity: 0.7;
+    }
+
     footer {
       position: fixed;
       bottom: 1.6rem;
@@ -294,6 +322,8 @@
         <button onclick="submitSignup()">चलो →</button>
       </div>
       <p class="signup-thanks" id="signupThanks">🙏 You're in. See you on August 15, 2047.</p>
+      <p class="or-divider">or</p>
+      <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
     </div>
   </main>
 
@@ -301,7 +331,7 @@
 
   <script>
     // ── TOGGLE: change to true to show the signup form ──
-    const SHOW_SIGNUP = false;
+    const SHOW_SIGNUP = true;
 
     if (SHOW_SIGNUP) {
       document.getElementById('signupWrap').classList.add('visible');
