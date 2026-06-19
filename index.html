@@ -335,7 +335,7 @@
           method="POST"
           target="hidden_iframe"
           style="display:none;">
-      <input type="text" name="entry.594929088" id="hiddenEmailField" />
+      <input type="text" name="entry.1474384186" id="hiddenEmailField" />
       <input type="hidden" name="fvv" value="1" />
       <input type="hidden" name="pageHistory" value="0" />
     </form>
@@ -360,7 +360,7 @@
       words[current].classList.add('active');
     }, 2200);
 
-    // Signup submission — real form POST to hidden iframe (most reliable cross-origin method)
+    // Signup submission — real form POST to hidden iframe (confirmed working entry ID)
     function submitSignup() {
       const email = document.getElementById('emailInput').value.trim();
       if (!email || !email.includes('@')) {
