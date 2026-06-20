@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Materials — Viksit Bharat 2047 Research Program</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --saffron:   #E07B39;
+      --white:     #FAF8F4;
+      --ink:       #1A1410;
+      --stone:     #7A6F65;
+      --green:     #1A6B3C;
+      --navy:      #0D1B2A;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+    }
+
+    .tricolor {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right,
+        var(--saffron) 0% 33.3%,
+        #FAF8F4     33.3% 66.6%,
+        var(--green)   66.6% 100%
+      );
+    }
+
+    main {
+      min-height: calc(100vh - 4px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .wrap {
+      max-width: 420px;
+      width: 100%;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .desc {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: #B8AFA6;
+      line-height: 1.65;
+      margin-bottom: 2.2rem;
+    }
+
+    .code-row {
+      display: flex;
+      width: 100%;
+      gap: 0;
+      border: 1px solid var(--saffron);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .code-row input[type="text"],
+    .code-row input[type="password"] {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      color: var(--ink);
+      background: var(--white);
+      border: none;
+      outline: none;
+      letter-spacing: 0.05em;
+    }
+
+    .code-row input::placeholder { color: var(--stone); opacity: 0.6; }
+
+    .code-row button {
+      padding: 0.7rem 1.4rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--saffron);
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s ease;
+    }
+
+    .code-row button:hover { background: #C96A28; }
+
+    .error-msg {
+      display: none;
+      font-size: 0.82rem;
+      color: #E0735C;
+      margin-bottom: 1rem;
+    }
+
+    .error-msg.visible { display: block; }
+
+    .success-wrap {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .success-wrap.visible { display: flex; }
+
+    .success-msg {
+      font-size: 0.9rem;
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--green);
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .download-btn:hover { background: #145530; }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2.5rem;
+      font-size: 0.78rem;
+      color: var(--stone);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+
+    .back-link:hover { opacity: 1; }
+
+    footer {
+      position: fixed;
+      bottom: 1.6rem;
+      width: 100%;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--stone);
+      letter-spacing: 0.04em;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="tricolor"></div>
+
+  <main>
+    <div class="wrap">
+
+      <div id="formView">
+        <h1>Program Materials</h1>
+        <p class="desc">This page contains program materials shared selectively with partners and collaborators. Enter your access code to continue.</p>
+
+        <div class="code-row">
+          <input type="password" id="codeInput" placeholder="Access code" autocomplete="off" />
+          <button onclick="checkCode()">Submit</button>
+        </div>
+        <p class="error-msg" id="errorMsg">Incorrect code. Please check and try again.</p>
+      </div>
+
+      <div class="success-wrap" id="successWrap">
+        <p class="success-msg">🙏 Access granted.</p>
+        <a class="download-btn" id="downloadLink" href="/assets/VB2047_Research_Program_Deck.pdf" target="_blank" rel="noopener">View Deck (PDF) →</a>
+      </div>
+
+      <a href="/" class="back-link">← Back to august152047.in</a>
+    </div>
+  </main>
+
+  <footer>august152047.in</footer>
+
+  <script>
+    // SHA-256 hash of the access code — not plain text in source
+    const ACCESS_CODE_HASH = "f4ea1afb4810ece949a8d5b14a6dc79bef92caee7a73f7932c567be0445aa20";
+
+    async function sha256(text) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(text);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function checkCode() {
+      const input = document.getElementById('codeInput').value.trim();
+      const errorMsg = document.getElementById('errorMsg');
+      const inputHash = await sha256(input);
+
+      if (inputHash === ACCESS_CODE_HASH) {
+        document.getElementById('formView').style.display = 'none';
+        document.getElementById('successWrap').classList.add('visible');
+      } else {
+        errorMsg.classList.add('visible');
+        document.getElementById('codeInput').focus();
+      }
+    }
+
+    // Allow Enter key to submit
+    document.getElementById('codeInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        checkCode();
+      }
+    });
+  </script>
+</body>
+</html>
