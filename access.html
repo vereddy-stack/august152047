@@ -255,7 +255,7 @@
     }
 
     async function checkCode() {
-      const input = document.getElementById('codeInput').value.trim();
+      const input = document.getElementById('codeInput').value.trim().toUpperCase();
       const errorMsg = document.getElementById('errorMsg');
       const inputHash = await sha256(input);
 
