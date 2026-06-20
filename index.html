@@ -143,6 +143,24 @@
       margin-bottom: 2.5rem;
     }
 
+    .materials-link {
+      display: block;
+      margin-top: -1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      opacity: 0.75;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .materials-link:hover {
+      opacity: 1;
+      color: var(--saffron);
+    }
+
     /* Signup form — hidden until SHOW_SIGNUP = true */
     .signup-wrap {
       display: none;
@@ -313,6 +331,8 @@
     <div class="divider"></div>
     <p class="tagline">Because 2047 won't build itself. This is India's moment.</p>
     <span class="coming-soon">Coming Soon</span>
+
+    <a href="/access" class="materials-link">Program Materials →</a>
 
     <!-- SIGNUP FORM — to show, change SHOW_SIGNUP to true below -->
     <div class="signup-wrap" id="signupWrap">
