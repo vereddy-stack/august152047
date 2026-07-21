@@ -334,31 +334,11 @@
 
     <a href="/access" class="materials-link">Program Materials →</a>
 
-    <!-- SIGNUP FORM — to hide, change SHOW_SIGNUP to false below -->
+    <!-- SIGNUP — to hide, change SHOW_SIGNUP to false below -->
     <div class="signup-wrap" id="signupWrap">
       <p class="signup-label">STAY UPDATED</p>
       <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
-      <p class="or-divider">or</p>
-      <div class="signup-row">
-        <input type="email" id="emailInput" placeholder="Your email address" />
-        <button onclick="submitSignup()">चलो →</button>
-      </div>
-      <p class="signup-thanks" id="signupThanks">🙏 Thank you — you're on the list.</p>
     </div>
-
-    <!-- Hidden iframe target so the form post doesn't navigate the page -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
-    <!-- Real HTML form, submitted invisibly to the hidden iframe -->
-    <form id="googleForm"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSe8jY5MF-R0AcEcvS3cwKMIineNGP0Tz7CKXK0GXPv3gThpLA/formResponse"
-          method="POST"
-          target="hidden_iframe"
-          style="display:none;">
-      <input type="text" name="entry.1474384186" id="hiddenEmailField" />
-      <input type="hidden" name="fvv" value="1" />
-      <input type="hidden" name="pageHistory" value="0" />
-    </form>
   </main>
 
   <footer>august152047.in · चलो August 15, 2047 ™ · august152047 ™ · <a href="mailto:vasu@getjobready.in" style="color:inherit;text-decoration:none;">vasu@getjobready.in</a></footer>
@@ -379,21 +359,6 @@
       current = (current + 1) % words.length;
       words[current].classList.add('active');
     }, 2200);
-
-    // Signup submission — real form POST to hidden iframe (confirmed working entry ID)
-    function submitSignup() {
-      const email = document.getElementById('emailInput').value.trim();
-      if (!email || !email.includes('@')) {
-        document.getElementById('emailInput').focus();
-        return;
-      }
-      document.getElementById('hiddenEmailField').value = email;
-      document.getElementById('googleForm').submit();
-
-      document.querySelector('.signup-row').style.display = 'none';
-      document.querySelector('.signup-label').style.display = 'none';
-      document.getElementById('signupThanks').style.display = 'block';
-    }
   </script>
 </body>
 </html>
