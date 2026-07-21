@@ -334,16 +334,16 @@
 
     <a href="/access" class="materials-link">Program Materials →</a>
 
-    <!-- SIGNUP FORM — to show, change SHOW_SIGNUP to true below -->
+    <!-- SIGNUP FORM — to hide, change SHOW_SIGNUP to false below -->
     <div class="signup-wrap" id="signupWrap">
-      <p class="signup-label">Be part of India's 2047 moment</p>
+      <p class="signup-label">STAY UPDATED</p>
+      <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
+      <p class="or-divider">or</p>
       <div class="signup-row">
         <input type="email" id="emailInput" placeholder="Your email address" />
         <button onclick="submitSignup()">चलो →</button>
       </div>
-      <p class="signup-thanks" id="signupThanks">🙏 You're in. See you on August 15, 2047.</p>
-      <p class="or-divider">or</p>
-      <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
+      <p class="signup-thanks" id="signupThanks">🙏 Thank you — you're on the list.</p>
     </div>
 
     <!-- Hidden iframe target so the form post doesn't navigate the page -->
@@ -364,8 +364,8 @@
   <footer>august152047.in · चलो August 15, 2047 ™ · august152047 ™ · <a href="mailto:vasu@getjobready.in" style="color:inherit;text-decoration:none;">vasu@getjobready.in</a></footer>
 
   <script>
-    // ── TOGGLE: change to true to show the signup form ──
-    const SHOW_SIGNUP = false;
+    // ── TOGGLE: change to false to hide the signup form ──
+    const SHOW_SIGNUP = true;
 
     if (SHOW_SIGNUP) {
       document.getElementById('signupWrap').classList.add('visible');
