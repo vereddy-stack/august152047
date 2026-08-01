@@ -143,6 +143,27 @@
       margin-bottom: 2.5rem;
     }
 
+    .site-nav {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .site-nav a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--stone);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .site-nav a:hover {
+      color: var(--saffron);
+      border-color: var(--saffron);
+    }
+
     /* Signup form — hidden until SHOW_SIGNUP = true */
     .signup-wrap {
       display: none;
@@ -260,7 +281,7 @@
       h1           { animation-delay: 0.35s; }
       .divider     { animation-delay: 0.5s; }
       .tagline     { animation-delay: 0.6s; }
-      .coming-soon { animation-delay: 0.72s; }
+      .site-nav { animation-delay: 0.72s; }
       .signup-wrap { animation-delay: 0.82s; }
 
       @keyframes fadeUp {
@@ -311,8 +332,12 @@
     <p class="eyebrow">August 15, 2047</p>
     <h1>Viksit Bharat 2047<br><span>Research Program</span></h1>
     <div class="divider"></div>
-    <p class="tagline">Because 2047 won't build itself. This is India's moment.</p>
-    <span class="coming-soon">Coming Soon</span>
+    <p class="tagline">What must India learn, build, and become between now and August 15, 2047?</p>
+    <p class="tagline" style="margin-top:-1.6rem; font-size:0.85rem; opacity:0.75;">A place where India thinks about development.</p>
+    <nav class="site-nav">
+      <a href="/vbos">VBOS →</a>
+      <a href="/pillars">Four Pillars →</a>
+    </nav>
 
     <!-- SIGNUP — to hide, change SHOW_SIGNUP to false below -->
     <div class="signup-wrap" id="signupWrap">
