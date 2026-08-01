@@ -70,7 +70,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 4rem 2rem 6rem;
+      padding: 4rem 2rem 3rem;
     }
 
     .chalo-wrap {
@@ -279,14 +279,15 @@
     }
 
     footer {
-      position: fixed;
-      bottom: 1.6rem;
+      position: static;
+      margin-top: 2rem;
       width: 100%;
       text-align: center;
       font-size: 0.72rem;
       color: var(--stone);
       letter-spacing: 0.04em;
       opacity: 0.7;
+      padding-bottom: 1.6rem;
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -300,8 +301,8 @@
       h1           { animation-delay: 0.35s; }
       .divider     { animation-delay: 0.5s; }
       .tagline     { animation-delay: 0.6s; }
-      .explore-wrap { animation-delay: 0.72s; }
-      .signup-wrap { animation-delay: 0.82s; }
+      .signup-wrap { animation-delay: 0.72s; }
+      .explore-wrap { animation-delay: 0.82s; }
 
       @keyframes fadeUp {
         to { opacity: 1; transform: translateY(0); }
@@ -354,6 +355,12 @@
     <p class="tagline">What must India learn, build, and become between now and August 15, 2047?</p>
     <p class="tagline" style="margin-top:-1.6rem; font-size:0.85rem; opacity:0.75;">A place where India thinks about development.</p>
 
+    <!-- SIGNUP — to hide, change SHOW_SIGNUP to false below -->
+    <div class="signup-wrap" id="signupWrap">
+      <p class="signup-label">BE PART OF IT</p>
+      <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
+    </div>
+
     <div class="explore-wrap">
       <a href="/vbos" class="explore-card">
         <span class="explore-title">VBOS →</span>
@@ -363,12 +370,6 @@
         <span class="explore-title">Four Pillars →</span>
         <span class="explore-desc">Field notes from people and places, in India and beyond.</span>
       </a>
-    </div>
-
-    <!-- SIGNUP — to hide, change SHOW_SIGNUP to false below -->
-    <div class="signup-wrap" id="signupWrap">
-      <p class="signup-label">BE PART OF IT</p>
-      <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
     </div>
   </main>
 
