@@ -148,11 +148,20 @@
 
     .explore-wrap {
       display: flex;
-      gap: 1.2rem;
+      flex-direction: column;
+      gap: 0.9rem;
       margin-bottom: 2.5rem;
+      align-items: center;
+      max-width: 640px;
+      width: 100%;
+    }
+
+    .explore-row {
+      display: flex;
+      gap: 0.9rem;
       flex-wrap: wrap;
       justify-content: center;
-      max-width: 640px;
+      width: 100%;
     }
 
     .explore-card {
@@ -167,6 +176,18 @@
       padding: 1rem 1.3rem;
       width: 260px;
       transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .explore-card.featured {
+      width: 100%;
+      max-width: 540px;
+      border-color: #d8d2c4;
+      background: #FAF8F4;
+    }
+
+    .explore-card.featured .explore-title {
+      font-size: 1.05rem;
+      font-weight: 600;
     }
 
     .explore-card:hover {
@@ -366,18 +387,20 @@
     </div>
 
     <div class="explore-wrap">
-      <a href="/founding-essay" class="explore-card">
+      <a href="/founding-essay" class="explore-card featured">
         <span class="explore-title">What We Choose to Patiently Build</span>
         <span class="explore-desc">The founding essay of the August 15, 2047 project.<br>Read the essay →</span>
       </a>
-      <a href="/vbos" class="explore-card">
-        <span class="explore-title">VBOS →</span>
-        <span class="explore-desc">An evolving way of thinking about how institutions build lasting capability.</span>
-      </a>
-      <a href="/pillars" class="explore-card">
-        <span class="explore-title">Four Pillars →</span>
-        <span class="explore-desc">Field notes from people and places, in India and beyond.</span>
-      </a>
+      <div class="explore-row">
+        <a href="/vbos" class="explore-card">
+          <span class="explore-title">VBOS →</span>
+          <span class="explore-desc">An evolving way of thinking about how institutions build lasting capability.</span>
+        </a>
+        <a href="/pillars" class="explore-card">
+          <span class="explore-title">Four Pillars →</span>
+          <span class="explore-desc">Field notes from people and places, in India and beyond.</span>
+        </a>
+      </div>
     </div>
   </main>
 
