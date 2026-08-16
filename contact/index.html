@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — August 15, 2047 Project</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --saffron:   #E07B39;
+      --white:     #FAF8F4;
+      --ink:       #1A1410;
+      --stone:     #7A6F65;
+      --green:     #1A6B3C;
+      --navy:      #0F2952;
+      --teal:      #0A7E8C;
+    }
+
+    html, body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .tricolor { width: 100%; height: 4px; display: flex; }
+    .tricolor div { flex: 1; height: 4px; }
+    .tricolor .s { background: var(--saffron); }
+    .tricolor .w { background: var(--white); border-top: 1px solid #e8e3da; border-bottom: 1px solid #e8e3da; }
+    .tricolor .g { background: var(--green); }
+
+    nav.top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 2rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    nav.top a { font-size: 0.85rem; color: var(--stone); text-decoration: none; letter-spacing: 0.02em; }
+    nav.top a:hover { color: var(--saffron); }
+    nav.top .home-link { font-weight: 500; }
+
+    main {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 2rem 2rem 6rem;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 1rem;
+    }
+
+    h1.page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 6vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+      color: var(--ink);
+    }
+
+    p.subtitle {
+      font-size: 1rem;
+      color: var(--stone);
+      margin-bottom: 2.6rem;
+      max-width: 50ch;
+    }
+
+    form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid #d8d2c4;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+      border-color: var(--saffron);
+    }
+
+    textarea { min-height: 140px; resize: vertical; }
+
+    button[type="submit"] {
+      align-self: flex-start;
+      padding: 0.75rem 1.8rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--green);
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      margin-top: 0.5rem;
+    }
+
+    button[type="submit"]:hover { background: #145530; }
+    button[type="submit"]:disabled { opacity: 0.6; cursor: default; }
+
+    .form-status {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+    .form-status.success { color: var(--green); display: block; }
+    .form-status.error { color: var(--saffron); display: block; }
+
+    footer {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--stone);
+      letter-spacing: 0.04em;
+      padding: 2rem 1rem;
+      opacity: 0.75;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 1.5rem 1.3rem 4rem; }
+      nav.top { padding: 1.2rem 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="tricolor"><div class="s"></div><div class="w"></div><div class="g"></div></div>
+
+  <nav class="top">
+    <a href="/" class="home-link">← August 15, 2047</a>
+    <a href="/vbos">VBOS →</a>
+  </nav>
+
+  <main>
+    <p class="eyebrow">Get in Touch</p>
+    <h1 class="page-title">Contact</h1>
+    <p class="subtitle">Questions, thoughts, or interest in the work — we'd like to hear from you.</p>
+
+    <form id="contactForm">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" id="submitBtn">Send →</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+  </main>
+
+  <footer>august152047.in &middot; &#2330;&#2354;&#2379; August 15, 2047 &trade; &middot; august152047 &trade;</footer>
+
+  <script>
+    // ── FORMSPREE ENDPOINT: replace with your actual endpoint after signing up at formspree.io ──
+    const FORM_ENDPOINT = "https://formspree.io/f/xoeavkvk";
+
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('submitBtn');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      status.className = 'form-status';
+      status.textContent = '';
+
+      try {
+        const response = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+
+        if (response.ok) {
+          form.reset();
+          status.textContent = '🙏 Thank you — your message has been sent.';
+          status.className = 'form-status success';
+          btn.textContent = 'Send →';
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (err) {
+        status.textContent = 'Something went wrong. Please try again.';
+        status.className = 'form-status error';
+        btn.textContent = 'Send →';
+      }
+      btn.disabled = false;
+    });
+  </script>
+</body>
+</html>

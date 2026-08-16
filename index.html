@@ -3,7 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Viksit Bharat 2047 Research Program</title>
+  <title>August 15, 2047 Project</title>
+
+  <!-- Open Graph / social share preview -->
+  <meta property="og:title" content="August 15, 2047" />
+  <meta property="og:description" content="A place where India thinks about development." />
+  <meta property="og:image" content="https://august152047.in/assets/og_image.png" />
+  <meta property="og:url" content="https://august152047.in/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="August 15, 2047" />
+  <meta name="twitter:description" content="A place where India thinks about development." />
+  <meta name="twitter:image" content="https://august152047.in/assets/og_image.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -70,7 +84,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 4rem 2rem 6rem;
+      padding: 4rem 2rem 3rem;
     }
 
     .chalo-wrap {
@@ -143,6 +157,67 @@
       margin-bottom: 2.5rem;
     }
 
+    .explore-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-bottom: 2.5rem;
+      align-items: center;
+      max-width: 640px;
+      width: 100%;
+    }
+
+    .explore-row {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .explore-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #e8e3da;
+      border-radius: 3px;
+      padding: 1rem 1.3rem;
+      width: 260px;
+      transition: border-color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .explore-card.featured {
+      width: 100%;
+      max-width: 540px;
+      border-color: #d8d2c4;
+      background: #FAF8F4;
+    }
+
+    .explore-card.featured .explore-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .explore-card:hover {
+      border-color: var(--saffron);
+    }
+
+    .explore-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .explore-desc {
+      font-size: 0.8rem;
+      color: var(--stone);
+      line-height: 1.5;
+    }
+
     /* Signup form — hidden until SHOW_SIGNUP = true */
     .signup-wrap {
       display: none;
@@ -152,7 +227,21 @@
       width: 100%;
       max-width: 380px;
       margin-top: 0.5rem;
+      margin-bottom: 2.2rem;
     }
+
+    .secondary-link {
+      font-size: 0.78rem;
+      color: var(--stone);
+      opacity: 0.85;
+    }
+    .secondary-link a {
+      color: var(--stone);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.2s ease;
+    }
+    .secondary-link a:hover { color: var(--saffron); }
 
     .signup-wrap.visible { display: flex; }
 
@@ -239,14 +328,15 @@
     }
 
     footer {
-      position: fixed;
-      bottom: 1.6rem;
+      position: static;
+      margin-top: 2rem;
       width: 100%;
       text-align: center;
       font-size: 0.72rem;
       color: var(--stone);
       letter-spacing: 0.04em;
       opacity: 0.7;
+      padding-bottom: 1.6rem;
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -256,11 +346,11 @@
         animation: fadeUp 0.7s ease forwards;
       }
       .chalo-wrap  { animation-delay: 0.05s; }
-      .eyebrow     { animation-delay: 0.2s; }
-      h1           { animation-delay: 0.35s; }
+      h1           { animation-delay: 0.2s; }
+      .eyebrow     { animation-delay: 0.35s; }
       .divider     { animation-delay: 0.5s; }
       .tagline     { animation-delay: 0.6s; }
-      .coming-soon { animation-delay: 0.72s; }
+      .explore-wrap { animation-delay: 0.72s; }
       .signup-wrap { animation-delay: 0.82s; }
 
       @keyframes fadeUp {
@@ -308,20 +398,37 @@
       <span class="chalo-word">چلو</span>
     </div>
 
-    <p class="eyebrow">August 15, 2047</p>
-    <h1>Viksit Bharat 2047<br><span>Research Program</span></h1>
+    <h1>August 15, 2047</h1>
     <div class="divider"></div>
-    <p class="tagline">Because 2047 won't build itself. This is India's moment.</p>
-    <span class="coming-soon">Coming Soon</span>
+    <p class="tagline">What must India learn, build, and become between now and August 15, 2047?</p>
+    <p class="tagline" style="margin-top:-1.6rem; font-size:0.85rem; opacity:0.75;">A place where India thinks about development.</p>
+
+    <div class="explore-wrap">
+      <a href="/founding-essay" class="explore-card featured">
+        <span class="explore-title">What We Choose to Patiently Build</span>
+        <span class="explore-desc">The founding essay of the August 15, 2047 project.<br>Read the essay →</span>
+      </a>
+      <div class="explore-row">
+        <a href="/vbos" class="explore-card">
+          <span class="explore-title">VBOS →</span>
+          <span class="explore-desc">An evolving way of thinking about how institutions build lasting capability.</span>
+        </a>
+        <a href="/field-notes" class="explore-card">
+          <span class="explore-title">Field Notes →</span>
+          <span class="explore-desc">Field notes from people and places, in India and beyond.</span>
+        </a>
+      </div>
+    </div>
 
     <!-- SIGNUP — to hide, change SHOW_SIGNUP to false below -->
     <div class="signup-wrap" id="signupWrap">
       <p class="signup-label">BE PART OF IT</p>
       <a class="whatsapp-join" href="https://whatsapp.com/channel/0029Vb7aNQRGehEI3cs4E218" target="_blank" rel="noopener">Join on WhatsApp →</a>
+      <p class="secondary-link">Prefer email? <a href="https://august152047.substack.com" target="_blank" rel="noopener">Follow on Substack →</a></p>
     </div>
   </main>
 
-  <footer>august152047.in · चलो August 15, 2047 ™ · august152047 ™ · <a href="mailto:vasu@getjobready.in" style="color:inherit;text-decoration:none;">vasu@getjobready.in</a></footer>
+  <footer>august152047.in · चलो August 15, 2047 ™ · august152047 ™ · <a href="/contact" style="color:inherit;text-decoration:none;">Contact</a></footer>
 
   <script>
     // ── TOGGLE: change to false to hide the signup form ──
