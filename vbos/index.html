@@ -153,7 +153,26 @@
       text-transform: uppercase;
       color: var(--teal);
       margin-bottom: 0.7rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+    .copy-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: var(--teal);
+      background: #FFFFFF;
+      border: 1px solid var(--teal);
+      border-radius: 3px;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .copy-btn:hover { background: var(--teal); color: #FFFFFF; }
+    .copy-btn.copied { background: var(--green); border-color: var(--green); color: #FFFFFF; }
 
     a.vbos-link {
       color: var(--teal);
@@ -487,8 +506,8 @@
       <p>If you have an implementation plan, policy document, or scheme you're working on, you can put it to the test.</p>
       <p>Point an AI assistant like Claude or ChatGPT to this page (august152047.in/vbos), or paste the five stages, the questions, and the scoring rubric above directly, along with your plan, and ask it to walk through each stage and generate a diagnostic score.</p>
 
-      <p class="prompt-label">A sample prompt to get started</p>
-      <div class="prompt-box">I'd like you to assess [name of my plan or programme] against the VBOS framework at august152047.in/vbos. Please read the five stages and the 25 scored questions on that page, then walk through each stage for my plan below, scoring each question 0, 1, or 2, and briefly explaining your reasoning. Give me stage totals, an overall diagnostic score out of 50, and the two or three biggest gaps you see.
+      <p class="prompt-label">A sample prompt to get started <button class="copy-btn" id="copyPromptBtn" onclick="copyPrompt()">Copy</button></p>
+      <div class="prompt-box" id="promptText">I'd like you to assess [name of my plan or programme] against the VBOS framework at august152047.in/vbos. Please read the five stages and the 25 scored questions on that page, then walk through each stage for my plan below, scoring each question 0, 1, or 2, and briefly explaining your reasoning. Give me stage totals, an overall diagnostic score out of 50, and the two or three biggest gaps you see.
 
 [Paste your plan, policy document, or scheme description here]</div>
       <p>You'll get a real diagnostic score, out of 50, and a genuine qualitative read of where the plan is strong and where the gaps are. What that score means in absolute terms, whether it's "good enough" to proceed, is something we're deliberately not telling you yet, since that's exactly what pilots are for.</p>
@@ -580,5 +599,21 @@
   </main>
 
   <footer>august152047.in · चलो August 15, 2047 ™ · august152047 ™ · <a href="/contact" style="color:inherit;text-decoration:none;">Contact</a></footer>
+
+  <script>
+    function copyPrompt() {
+      const text = document.getElementById('promptText').innerText;
+      navigator.clipboard.writeText(text).then(function () {
+        const btn = document.getElementById('copyPromptBtn');
+        const original = btn.textContent;
+        btn.textContent = 'Copied ✓';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
