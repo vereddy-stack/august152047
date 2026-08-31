@@ -134,6 +134,27 @@
     }
     .not-box p:last-child { margin-bottom: 0; }
 
+    .prompt-box {
+      background: #FFFFFF;
+      border: 1px solid #d8d2c4;
+      border-radius: 4px;
+      padding: 1.3rem 1.6rem;
+      margin: 1.5rem 0;
+      font-family: 'Inter', monospace;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--ink);
+      white-space: pre-wrap;
+    }
+    .prompt-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.7rem;
+    }
+
     a.vbos-link {
       color: var(--teal);
       text-decoration: none;
@@ -465,6 +486,11 @@
       <h2 class="section-title">Try This With Your Own Plan</h2>
       <p>If you have an implementation plan, policy document, or scheme you're working on, you can put it to the test.</p>
       <p>Point an AI assistant like Claude or ChatGPT to this page (august152047.in/vbos), or paste the five stages, the questions, and the scoring rubric above directly, along with your plan, and ask it to walk through each stage and generate a diagnostic score.</p>
+
+      <p class="prompt-label">A sample prompt to get started</p>
+      <div class="prompt-box">I'd like you to assess [name of my plan or programme] against the VBOS framework at august152047.in/vbos. Please read the five stages and the 25 scored questions on that page, then walk through each stage for my plan below, scoring each question 0, 1, or 2, and briefly explaining your reasoning. Give me stage totals, an overall diagnostic score out of 50, and the two or three biggest gaps you see.
+
+[Paste your plan, policy document, or scheme description here]</div>
       <p>You'll get a real diagnostic score, out of 50, and a genuine qualitative read of where the plan is strong and where the gaps are. What that score means in absolute terms, whether it's "good enough" to proceed, is something we're deliberately not telling you yet, since that's exactly what pilots are for.</p>
     </section>
 
