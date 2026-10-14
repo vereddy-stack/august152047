@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHC6N6QT0R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QHC6N6QT0R');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National Outcome Scorecard: Five Dimensions of Lived Development Outcomes</title>
+  <meta name="description" content="The National Outcome Scorecard tracks five dimensions of lived experience, from job quality to productivity, to show whether development is reaching people." />
+  <link rel="canonical" href="https://august152047.in/scorecard" />
+
+  <!-- Open Graph / social share preview -->
+  <meta property="og:title" content="The National Outcome Scorecard" />
+  <meta property="og:description" content="Five dimensions of whether development is reaching people." />
+  <meta property="og:image" content="https://august152047.in/assets/og_image.png" />
+  <meta property="og:url" content="https://august152047.in/scorecard" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The National Outcome Scorecard" />
+  <meta name="twitter:description" content="Five dimensions of whether development is reaching people." />
+  <meta name="twitter:image" content="https://august152047.in/assets/og_image.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --saffron:   #E07B39;
+      --white:     #FAF8F4;
+      --ink:       #1A1410;
+      --stone:     #7A6F65;
+      --green:     #1A6B3C;
+      --navy:      #0F2952;
+      --teal:      #0A7E8C;
+    }
+
+    html, body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .tricolor {
+      width: 100%;
+      height: 4px;
+      display: flex;
+    }
+    .tricolor div { flex: 1; height: 4px; }
+    .tricolor .s { background: var(--saffron); }
+    .tricolor .w { background: var(--white); border-top: 1px solid #e8e3da; border-bottom: 1px solid #e8e3da; }
+    .tricolor .g { background: var(--green); }
+
+    nav.top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 2rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    nav.top a {
+      font-size: 0.85rem;
+      color: var(--stone);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    nav.top a:hover { color: var(--saffron); }
+    nav.top .home-link { font-weight: 500; }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 2rem 6rem;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 1rem;
+    }
+
+    h1.page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+      color: var(--ink);
+    }
+
+    p.subtitle {
+      font-size: 1.05rem;
+      color: var(--stone);
+      font-style: italic;
+      margin-bottom: 3rem;
+      max-width: 50ch;
+    }
+
+    h2.section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 4vw, 1.9rem);
+      font-weight: 600;
+      color: var(--navy);
+      margin-top: 3.5rem;
+      margin-bottom: 1.1rem;
+      line-height: 1.3;
+    }
+
+    section p {
+      font-size: 1.02rem;
+      margin-bottom: 1.1rem;
+      max-width: 62ch;
+    }
+
+    .not-box {
+      background: #F4F0E8;
+      border-left: 3px solid var(--saffron);
+      padding: 1.3rem 1.6rem;
+      margin: 1.5rem 0;
+    }
+    .not-box p:last-child { margin-bottom: 0; }
+
+    .prompt-box {
+      background: #FFFFFF;
+      border: 1px solid #d8d2c4;
+      border-radius: 4px;
+      padding: 1.3rem 1.6rem;
+      margin: 1.5rem 0;
+      font-family: 'Inter', monospace;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--ink);
+      white-space: pre-wrap;
+    }
+    .prompt-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.7rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .copy-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: var(--teal);
+      background: #FFFFFF;
+      border: 1px solid var(--teal);
+      border-radius: 3px;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .copy-btn:hover { background: var(--teal); color: #FFFFFF; }
+    .copy-btn.copied { background: var(--green); border-color: var(--green); color: #FFFFFF; }
+
+    a.vbos-link {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid var(--teal);
+    }
+    a.vbos-link:hover { color: var(--saffron); border-color: var(--saffron); }
+
+    .pull-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--navy);
+      text-align: center;
+      line-height: 1.5;
+      max-width: 42ch;
+      margin: 2.4rem auto;
+      padding: 1.6rem 0;
+      border-top: 1px solid #e8e3da;
+      border-bottom: 1px solid #e8e3da;
+    }
+
+    .architecture-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .architecture-list li {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #e8e3da;
+    }
+    .architecture-list li:last-child { border-bottom: none; }
+    .architecture-list b {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .stages-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.8rem 0;
+      font-size: 0.92rem;
+    }
+    .stages-table th {
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stone);
+      padding: 0.5rem 0.8rem 0.5rem 0;
+      border-bottom: 2px solid var(--teal);
+    }
+    .stages-table td {
+      padding: 0.9rem 0.8rem 0.9rem 0;
+      border-bottom: 1px solid #e8e3da;
+      vertical-align: top;
+    }
+    .stages-table td.stage-name {
+      font-weight: 600;
+      color: var(--navy);
+      white-space: nowrap;
+      width: 42%;
+    }
+    .stages-table tr:last-child td { border-bottom: none; }
+
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem 0;
+      font-size: 0.88rem;
+    }
+    .score-table th {
+      text-align: left;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stone);
+      padding: 0.5rem 0.6rem;
+      border-bottom: 2px solid var(--teal);
+    }
+    .score-table th.score-col { text-align: center; width: 90px; }
+    .score-table td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid #e8e3da;
+      vertical-align: top;
+    }
+    .score-table td.score-col {
+      text-align: center;
+      white-space: nowrap;
+      color: var(--stone);
+      font-variant-numeric: tabular-nums;
+    }
+    .score-table tr:last-child td { border-bottom: none; }
+    .score-table tr.stage-total td {
+      font-weight: 600;
+      color: var(--navy);
+      background: #F4F0E8;
+      border-bottom: none;
+    }
+
+    .diagram-wrap {
+      margin: 2.2rem 0;
+      text-align: center;
+    }
+    .diagram-wrap img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+    .diagram-caption {
+      font-size: 0.8rem;
+      color: var(--stone);
+      font-style: italic;
+      margin-top: 0.6rem;
+    }
+
+    .principle {
+      margin: 1.6rem 0;
+    }
+    .principle h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+    .principle p {
+      color: var(--stone);
+      font-size: 0.98rem;
+      margin-bottom: 0;
+    }
+
+    .invitation-block {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid #e8e3da;
+      text-align: center;
+    }
+    .invitation-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+    .invitation-chalo {
+      font-size: 1rem;
+      color: var(--saffron);
+      margin-bottom: 1.6rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--stone);
+      letter-spacing: 0.04em;
+      padding: 2rem 1rem;
+      opacity: 0.75;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 1.5rem 1.3rem 4rem; }
+      nav.top { padding: 1.2rem 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="tricolor"><div class="s"></div><div class="w"></div><div class="g"></div></div>
+
+  <nav class="top">
+    <a href="/" class="home-link">← August 15, 2047</a>
+    <a href="/field-notes">Field Notes →</a>
+  </nav>
+
+  <main>
+    <p class="eyebrow">A Framework in Development</p>
+    <h1 class="page-title">The National Outcome Scorecard</h1>
+    <p class="subtitle" style="font-style: normal; font-weight: 600; color: var(--navy); font-size: 1.15rem; margin-bottom: 0.9rem;">Five dimensions of whether development is reaching people.</p>
+    <p class="subtitle">VBOS asks whether a programme is designed to learn. The National Outcome Scorecard asks a different, larger question: is the country itself moving? A nation does not advance because individual schemes meet their internal milestones. It advances when the conditions that decide whether people can build a life, a company, and a career actually improve.</p>
+
+    <section>
+      <p>Five dimensions, each tracked through a small set of indicators and expected to be summarised as one index. Not forty-seven targets. Not ten schemes. Five numbers, each tied to lived experience.</p>
+
+      <h2 class="section-title">Two Altitudes</h2>
+      <p>The Scorecard and <a href="/vbos" class="vbos-link">VBOS</a> work at different altitudes. VBOS looks at whether any one programme is built to learn. The Scorecard looks at whether the country, taken as a whole, is moving. The two can diverge: well-designed programmes may be running while a dimension stagnates, which can mean effort is going into the wrong things, or the right things at the wrong scale. That divergence is the signal the Scorecard exists to surface.</p>
+
+      <h2 class="section-title">The Five Dimensions</h2>
+      <ul class="architecture-list">
+        <li><b>Job Quality:</b> is work becoming formal, productive, and upward-mobile? Indicative indicators: youth unemployment, share of formal employment, educated unemployment, and real wage growth for the bottom half of earners.</li>
+        <li><b>Economic Security:</b> are households protected against shocks? Indicative indicators: out-of-pocket health spending, catastrophic health events, insurance claim settlement, and income volatility for the bottom 60 percent.</li>
+        <li><b>Urban Livability:</b> are cities livable, time-efficient, and service-complete? Indicative indicators: commute times, water reliability, sewage treatment coverage, and housing affordability.</li>
+        <li><b>Economic Friction:</b> how easily can a venture start and operate? Indicative indicators: logistics costs, business start-up time, regulatory compliance time, and court resolution time.</li>
+        <li><b>Productivity &amp; Competitiveness:</b> is India becoming globally competitive in output efficiency? Indicative indicators: manufacturing productivity growth, export growth, and energy efficiency of GDP.</li>
+      </ul>
+
+      <h2 class="section-title">Why One Number Each</h2>
+      <p>Each dimension compresses several systems into one index. Water and sewage sit inside urban livability, education inside job quality, regulation inside economic friction. The point is to know, at a glance, whether the system as a whole is working, the way a pulse tells a doctor something a hundred separate readings cannot.</p>
+
+      <div class="not-box">
+        <p><b style="font-weight:600; color:var(--navy);">Where this stands.</b> The Scorecard is a working draft. The indicators above are illustrative. Weights, scales, and data sources are being developed through research and, in time, institutional partnerships. They are shared here to be tested and challenged, not announced as settled. If you would like to contribute or respond, <a href="/contact" class="vbos-link">reach out</a>.</p>
+      </div>
+
+      <p>If Viksit Bharat 2047 is real, these five numbers should move. If they do not, something in the system beneath them is not working.</p>
+      <p style="margin-top:2rem;"><a href="/vbos" class="vbos-link">Read about VBOS →</a></p>
+    </section>
+  </main>
+
+  <footer>august152047.in · चलो August 15, 2047 ™ · august152047 ™ · <a href="/contact" style="color:inherit;text-decoration:none;">Contact</a></footer>
+</body>
+</html>
